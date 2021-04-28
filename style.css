@@ -1,0 +1,123 @@
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIBLES */
+:root {
+  --name-card-space: 5px;
+  --title-card-space: 6px;
+}
+
+/* MAIN CONTAINER */
+.main__container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 2em clamp(0.5em, 5vw, 5em) 0;
+}
+
+/* HEADER */
+header {
+  width: 85%;
+}
+h1 {
+  margin-bottom: 1em;
+  font-size: 2.25rem;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+}
+h2 {
+  margin-bottom: 0.5em;
+  font-size: 1.125rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.about {
+  font-size: 0.875rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+/* CONTENT */
+.team__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10%;
+  margin-top: 4em;
+}
+/* profile card */
+.profile:nth-child(2),
+.profile:nth-child(4),
+.profile:nth-child(6) {
+  transform: translateY(50px);
+}
+.content__card {
+  display: flex;
+}
+.image__card img {
+  width: 100%;
+}
+.title__card {
+  font-family: "PT Serif", serif;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-left: var(--name-card-space);
+  writing-mode: vertical-rl;
+}
+.name__card {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  /* 14px @ 550px increasing to 16px @ 1020px */
+  font-size: clamp(14px, calc(0.875rem + ((1vw - 5.5px) * 0.4255)), 16px);
+  padding-top: var(--title-card-space);
+  padding-bottom: 50px;
+}
+
+/* FOOTER */
+footer {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 5em 0 3em 0;
+  justify-self: center;
+  color: #a9a9a9;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 550px) {
+  /* HEADER */
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  .team__description {
+    width: 40%;
+  }
+  .about {
+    font-size: 1.125rem;
+  }
+
+  /* CONTENT */
+  .team__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .profile:nth-child(2),
+  .profile:nth-child(4),
+  .profile:nth-child(6) {
+    transform: none;
+  }
+  .profile:nth-child(2),
+  .profile:nth-child(5) {
+    transform: translateY(50px);
+  }
+}
