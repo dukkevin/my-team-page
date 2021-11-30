@@ -78,6 +78,24 @@ h2 {
   padding-top: var(--title-card-space);
   padding-bottom: 50px;
 }
+.name__card a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+.name__card a::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background-color: #000;
+ transition: width .3s ease-in-out;
+}
+.name__card a:hover::after{
+  width: 60%;
+}
 
 /* FOOTER */
 footer {
@@ -96,6 +114,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 4rem;
   }
   h1 {
     margin-bottom: 0;
